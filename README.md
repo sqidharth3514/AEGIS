@@ -78,9 +78,10 @@ The modern web is often cluttered with sensory overload: aggressive autoplay med
 <p align="center">
   <img src="screenshots/analysis.png" alt="Aegis Settings Page" width="820" style="border-radius: 12px; box-shadow: 0 8px 30px rgba(0,0,0,0.5);">
 </p>
-<!--<p align="center">
+
+<p align="center">
   <img src="screenshots/analysis2.png" alt="Aegis Settings Page" width="820" style="border-radius: 12px; box-shadow: 0 8px 30px rgba(0,0,0,0.5);">
-</p>-->
+</p>
 
 
 ---
