@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aegis - Settings & Site Manager</title>
+    <link rel="stylesheet" href="settings.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <!-- HEADER -->
+        <header class="header">
+            <div class="logo">
+                <div class="shield">
+                    <img src="../assets/icons/shield.svg" alt="Aegis Shield Logo">
+                </div>
+                <div>
+                    <h1>Aegis Settings</h1>
+                    <p>Customize global accessibility defaults and manage site profiles</p>
+                </div>
+            </div>
+            <div class="version-badge">v1.2.0</div>
+        </header>
+
+        <!-- SECTION 1: GLOBAL PREFERENCES -->
+        <section class="card">
+            <h2>General Behavior</h2>
+
+            <div class="setting">
+                <div>
+                    <div class="setting-title">Enable Aegis by Default</div>
+                    <div class="setting-description">Automatically activate accessibility enhancements on every newly visited website</div>
+                </div>
+                <label class="switch">
+                    <input type="checkbox" id="defaultEnable">
+                    <span class="slider"></span>
+                </label>
+            </div>
+        </section>
+
+        <!-- SECTION 2: GLOBAL READABILITY DEFAULTS -->
+        <section class="card">
+            <h2>Default Readability Presets</h2>
+            <p class="section-desc">These preferences will automatically apply when visiting new websites.</p>
+
+            <div class="setting">
+                <div>
+                    <div class="setting-title">Default Typography</div>
+                    <div class="setting-description">Preferred font family across sites</div>
+                </div>
+                <select id="defaultFontFamily" class="custom-select">
+                    <option value="default">Default Site Font</option>
+                    <option value="dyslexic">OpenDyslexic (Dyslexia-friendly)</option>
+                    <option value="sans">Clean Sans-Serif</option>
+                    <option value="serif">Classic Serif</option>
+                </select>
+            </div>
+
+            <div class="setting">
+                <div>
+                    <div class="setting-title">Default Line Spacing</div>
+                    <div class="setting-description">Automatically expand line height for easier reading</div>
+                </div>
+                <label class="switch">
+                    <input type="checkbox" id="defaultLineHeight">
+                    <span class="slider"></span>
+                </label>
+            </div>
+
+            <div class="setting">
+                <div>
+                    <div class="setting-title">Always Show Reading Ruler</div>
+                    <div class="setting-description">Keep the focus line guide active on all pages</div>
+                </div>
+                <label class="switch">
+                    <input type="checkbox" id="defaultRuler">
+                    <span class="slider"></span>
+                </label>
+            </div>
+        </section>
+
+        <!-- SECTION 3: SITE PROFILES MANAGER -->
+        <section class="card">
+            <div class="card-header-row">
+                <div>
+                    <h2>Configured Site Profiles</h2>
+                    <p class="section-desc">Manage websites where you have customized readability settings.</p>
+                </div>
+                <button id="clearAllSitesBtn" class="danger-btn-sm" title="Remove all saved site customizations">Clear All Sites</button>
+            </div>
+
+            <div class="site-search-wrap">
+                <input type="text" id="siteSearchInput" placeholder="Filter configured domains..." class="text-input">
+            </div>
+
+            <div id="siteList" class="site-list">
+                <div class="empty-state">Loading configured sites...</div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: BACKUP & DATA -->
+        <section class="card">
+            <h2>Backup & Sync</h2>
+            <p class="section-desc">Transfer your preferences, custom site settings, and presets across devices.</p>
+            <div class="buttons">
+                <button id="exportBtn" class="primary-btn">
+                    <img src="../assets/icons/download.svg" alt="" class="btn-icon"> Export Settings (.json)
+                </button>
+                <button id="importBtn" class="secondary-btn">
+                    <img src="../assets/icons/upload.svg" alt="" class="btn-icon"> Import Settings
+                </button>
+            </div>
+            <input type="file" id="importFileInput" accept=".json" hidden>
+        </section>
+
+        <!-- SECTION 5: KEYBOARD SHORTCUTS -->
+        <section class="card">
+            <h2>Keyboard Shortcuts</h2>
+            <div class="shortcuts-grid">
+                <div class="shortcut-box">
+                    <kbd>Alt + Shift + 0</kbd>
+                    <span>Toggle Aegis On / Off</span>
+                </div>
+                <div class="shortcut-box">
+                    <kbd>Alt + Shift + 1</kbd>
+                    <span>Toggle Reader View</span>
+                </div>
+                <div class="shortcut-box">
+                    <kbd>Alt + Shift + 2</kbd>
+                    <span>Toggle Focus Mode</span>
+                </div>
+                <div class="shortcut-box">
+                    <kbd>Alt + Shift + 3</kbd>
+                    <span>Toggle Read Aloud (TTS)</span>
+                </div>
+            </div>
+            <div class="shortcuts-footer">
+                <p>To customize shortcut keys, navigate to: <code>chrome://extensions/shortcuts</code> in your address bar.</p>
+            </div>
+        </section>
+
+        <!-- SECTION 6: ABOUT -->
+        <section class="card about-card">
+            <h2>About Aegis</h2>
+            <p><strong>Version:</strong> 1.2.0 · Manifest V3</p>
+            <p><strong>Purpose:</strong> Built to empower individuals with dyslexia, ADHD, visual impairments, color vision deficiencies, and anyone desiring a cleaner, distraction-free reading experience across the modern web.</p>
+        </section>
+    </div>
+
+    <!-- TOAST NOTIFICATION -->
+    <div id="toast" class="toast" role="alert" aria-live="polite">
+        <div class="toast-icon">✓</div>
+        <span id="toastMessage" class="toast-message">Settings saved</span>
+    </div>
+
+    <script src="settings.js"></script>
+</body>
+
+</html>

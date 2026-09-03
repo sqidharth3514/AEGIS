@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aegis - Accessibility & Readability</title>
+    <link rel="stylesheet" href="popup.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- ONBOARDING MODAL -->
+    <div id="welcomeScreen" class="welcome-screen">
+        <div class="welcome-card">
+            <img src="../assets/icons/shield.svg" class="welcome-logo" alt="Aegis Shield Logo">
+            <h1>Welcome to Aegis</h1>
+            <p>Your comprehensive assistant for web accessibility, visual comfort, and readability.</p>
+            <ul class="welcome-features">
+                <li><span>🌙</span> Dark & High Contrast Modes</li>
+                <li><span>📖</span> Distraction-Free Reading Mode</li>
+                <li><span>📏</span> Reading Ruler & Line Guide</li>
+                <li><span>🔊</span> Text-to-Speech (Read Aloud)</li>
+                <li><span>♿</span> WCAG Accessibility Audit</li>
+            </ul>
+            <button id="getStartedBtn" class="primary-button">Get Started</button>
+        </div>
+    </div>
+
+    <div class="app">
+        <!-- HEADER -->
+        <header class="header">
+            <div class="brand">
+                <div class="shield">
+                    <img src="../assets/icons/shield.svg" alt="Aegis Logo">
+                </div>
+                <div class="brand-info">
+                    <h1>Aegis</h1>
+                    <p>Accessibility & Reading Assistant</p>
+                </div>
+            </div>
+            <div id="statusBadge" class="status-badge" role="status">OFF</div>
+        </header>
+
+        <!-- DASHBOARD -->
+        <section class="card dashboard">
+            <div class="dashboard-top">
+                <div>
+                    <div class="dashboard-label">CURRENT WEBSITE</div>
+                    <div id="currentSite" class="dashboard-site">Detecting tab...</div>
+                </div>
+                <div class="score-circle" title="WCAG Page Health Score">
+                    <span id="scoreNumber">--</span>
+                    <small id="scoreLabel">AUDIT</small>
+                </div>
+            </div>
+            <div class="progress">
+                <div id="progressBar" class="progress-fill"></div>
+            </div>
+            <div class="dashboard-meta-row">
+                <div class="enabled-title">Active Enhancements (<span id="activeCount">0</span>)</div>
+                <button id="quickAuditBtn" class="pill-button" title="Run fast accessibility scan">⚡ Scan</button>
+            </div>
+            <div id="enabledFeatures" class="feature-list">
+                <span class="feature-pill none">None Active</span>
+            </div>
+        </section>
+
+        <!-- GENERAL TOGGLE -->
+        <section class="card">
+            <div class="setting main-toggle">
+                <div>
+                    <div class="setting-title">Enable Aegis</div>
+                    <div class="setting-description">Activate accessibility tools on this site</div>
+                </div>
+                <label class="switch">
+                    <input type="checkbox" id="enableSwitch" aria-label="Enable Aegis on current site">
+                    <span class="slider"></span>
+                </label>
+            </div>
+        </section>
+
+        <!-- AUDIO / TEXT TO SPEECH -->
+        <section class="card">
+            <h2>AUDIO ASSISTANCE</h2>
+            <div class="tts-bar">
+                <button id="ttsPlayBtn" class="tts-button" title="Read page or selected text aloud">
+                    <span id="ttsIcon">🔊</span>
+                    <span id="ttsLabel">Listen to Page</span>
+                </button>
+                <button id="ttsStopBtn" class="tts-sub-btn" title="Stop speech">⏹</button>
+            </div>
+        </section>
+
+        <!-- TEXT & READABILITY -->
+        <section class="card">
+            <h2>TEXT & TYPOGRAPHY</h2>
+            <div class="font-buttons">
+                <button id="decreaseFontBtn" title="Decrease font size">A−</button>
+                <button id="increaseFontBtn" title="Increase font size">A+ (100%)</button>
+            </div>
+
+            <!-- FONT FAMILY SELECTOR -->
+            <div class="setting">
+                <div class="setting-info">
+                    <img class="setting-icon" src="../assets/icons/type.svg" alt="">
+                    <span>Font Style</span>
+                </div>
+                <select id="fontFamilySelect" class="custom-select" aria-label="Select typography style">
+                    <option value="default">Default Font</option>
+                    <option value="dyslexic">OpenDyslexic (Dyslexia)</option>
+                    <option value="sans">Clean Sans-Serif</option>
+                    <option value="serif">Classic Serif</option>
+                </select>
+            </div>
+
+            <div class="setting">
+                <div class="setting-info">
+                    <img class="setting-icon" src="../assets/icons/line-height.svg" alt="">
+                    <span>Line Spacing</span>
+                </div>
+                <label class="switch">
+                    <input id="lineHeightSwitch" type="checkbox" aria-label="Toggle expanded line spacing">
+                    <span class="slider"></span>
+                </label>
+            </div>
+
+            <div class="setting">
+                <div class="setting-info">
+                    <img class="setting-icon" src="../assets/icons/letter-spacing.svg" alt="">
+                    <span>Letter Spacing</span>
+                </div>
+                <label class="switch">
+                    <input id="letterSpacingSwitch" type="checkbox" aria-label="Toggle letter spacing">
+                    <span class="slider"></span>
+                </label>
+            </div>
+
+            <div class="setting">
+                <div class="setting-info">
+                    <img class="setting-icon" src="../assets/icons/word-spacing.svg" alt="">
+                    <span>Word Spacing</span>
+                </div>
+                <label class="switch">
+                    <input id="wordSpacingSwitch" type="checkbox" aria-label="Toggle word spacing">
+                    <span class="slider"></span>
+                </label>
+            </div>
+        </section>
+
+        <!-- VISUAL COMFORT & CONTRAST -->
+        <section class="card">
+            <h2>VISUAL COMFORT & CONTRAST</h2>
+            <div class="setting">
+                <div class="setting-info">
+                    <img class="setting-icon" src="../assets/icons/moon.svg" alt="">
+                    <span>Smart Dark Mode</span>
+                </div>
+                <label class="switch">
+                    <input id="darkModeSwitch" type="checkbox" aria-label="Toggle smart dark mode">
+                    <span class="slider"></span>
+                </label>
+            </div>
+
+            <div class="setting">
+                <div class="setting-info">
+                    <img class="setting-icon" src="../assets/icons/contrast.svg" alt="">
+                    <span>High Contrast (WCAG AAA)</span>
+                </div>
+                <label class="switch">
+                    <input id="contrastSwitch" type="checkbox" aria-label="Toggle high contrast">
+                    <span class="slider"></span>
+                </label>
+            </div>
+
+            <!-- COLOR TINT -->
+            <div class="setting">
+                <div class="setting-info">
+                    <img class="setting-icon" src="../assets/icons/palette.svg" alt="">
+                    <span>Visual Stress Tint</span>
+                </div>
+                <select id="colorTintSelect" class="custom-select" aria-label="Select color tint overlay">
+                    <option value="off">Off (None)</option>
+                    <option value="sepia">Warm Sepia</option>
+                    <option value="rose">Soft Rose</option>
+                    <option value="mint">Mint Green</option>
+                    <option value="ice">Ice Blue</option>
+                    <option value="yellow">Pale Yellow</option>
+                </select>
+            </div>
+
+            <button id="colorBlindBtn" class="action-btn" title="Cycle through color blind simulation filters">
+                <img class="setting-icon" src="../assets/icons/palette.svg" alt="">
+                <span id="colorBlindLabel">🎨 Color Blind Mode: OFF</span>
+            </button>
+        </section>
+
+        <!-- FOCUS & READING AIDS -->
+        <section class="card">
+            <h2>FOCUS & READING AIDS</h2>
+            <div class="setting">
+                <div class="setting-info">
+                    <img class="setting-icon" src="../assets/icons/book-open.svg" alt="">
+                    <span>Reader View</span>
+                </div>
+                <label class="switch">
+                    <input id="readingModeSwitch" type="checkbox" aria-label="Toggle distraction-free reader view">
+                    <span class="slider"></span>
+                </label>
+            </div>
+
+            <div class="setting">
+                <div class="setting-info">
+                    <img class="setting-icon" src="../assets/icons/focus.svg" alt="">
+                    <span>Focus Dimming</span>
+                </div>
+                <label class="switch">
+                    <input id="focusModeSwitch" type="checkbox" aria-label="Toggle focus mode dimming">
+                    <span class="slider"></span>
+                </label>
+            </div>
+
+            <div class="setting">
+                <div class="setting-info">
+                    <img class="setting-icon" src="../assets/icons/book.svg" alt="">
+                    <span>Reading Ruler Guide</span>
+                </div>
+                <label class="switch">
+                    <input id="readingRulerSwitch" type="checkbox" aria-label="Toggle mouse-following reading ruler">
+                    <span class="slider"></span>
+                </label>
+            </div>
+
+            <div class="setting">
+                <div class="setting-info">
+                    <img class="setting-icon" src="../assets/icons/align-left.svg" alt="">
+                    <span>Highlight All Links</span>
+                </div>
+                <label class="switch">
+                    <input id="highlightLinksSwitch" type="checkbox" aria-label="Highlight links for easy scanning">
+                    <span class="slider"></span>
+                </label>
+            </div>
+
+            <div class="setting">
+                <div class="setting-info">
+                    <img class="setting-icon" src="../assets/icons/type.svg" alt="">
+                    <span>Highlight Headings</span>
+                </div>
+                <label class="switch">
+                    <input id="highlightHeadingsSwitch" type="checkbox" aria-label="Highlight heading hierarchy">
+                    <span class="slider"></span>
+                </label>
+            </div>
+        </section>
+
+        <!-- ACCESSIBILITY AUDIT -->
+        <section class="card">
+            <div class="section-title">
+                <h2>PAGE ACCESSIBILITY AUDIT</h2>
+            </div>
+            <div id="analysisResults" class="analysis-results">
+                <div class="analysis-item placeholder">
+                    <span>Audit current webpage for WCAG compliance</span>
+                </div>
+            </div>
+            <button id="scanAccessibilityBtn" class="audit-button">
+                🔍 Run Accessibility Audit
+            </button>
+        </section>
+
+        <!-- BACKUP & DATA -->
+        <section class="card">
+            <h2>BACKUP & SYNC</h2>
+            <div class="font-buttons">
+                <button id="exportBackupBtn">
+                    <img class="setting-icon" src="../assets/icons/download.svg" alt="">
+                    Export
+                </button>
+                <button id="restoreBackupBtn">
+                    <img class="setting-icon" src="../assets/icons/upload.svg" alt="">
+                    Restore
+                </button>
+            </div>
+            <input type="file" id="restoreFileInput" accept=".json" hidden>
+        </section>
+
+        <!-- SHORTCUTS INFO -->
+        <section class="card shortcuts-card">
+            <h2>KEYBOARD SHORTCUTS</h2>
+            <div class="shortcut-row"><span>Alt + Shift + 0</span> <span>Toggle Aegis</span></div>
+            <div class="shortcut-row"><span>Alt + Shift + 1</span> <span>Reader View</span></div>
+            <div class="shortcut-row"><span>Alt + Shift + 2</span> <span>Focus Mode</span></div>
+            <div class="shortcut-row"><span>Alt + Shift + 3</span> <span>Read Aloud (TTS)</span></div>
+        </section>
+
+        <!-- OPTIONS BUTTON -->
+        <button id="openSettingsBtn" class="secondary-button">
+            ⚙ Extension Settings & Site Manager
+        </button>
+
+        <!-- RESET -->
+        <button id="resetBtn" class="reset-button">
+            <img class="setting-icon" src="../assets/icons/rotate-ccw.svg" alt="">
+            Reset Settings For This Site
+        </button>
+
+        <!-- FOOTER -->
+        <footer class="footer">
+            <span>Aegis v1.2.0 · Accessibility Made Simple</span>
+        </footer>
+    </div>
+
+    <!-- TOAST NOTIFICATION -->
+    <div id="toast" class="toast" role="alert" aria-live="polite">
+        <div class="toast-icon">✓</div>
+        <span id="toastMessage" class="toast-message">Settings saved</span>
+        <div class="toast-progress"></div>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+{
+  "manifest_version": 3,
+  "name": "Aegis - Accessibility & Readability",
+  "version": "1.2.2",
+  "description": "Comprehensive accessibility, readability, and visual comfort toolkit for all websites.",
+  "action": {
+    "default_title": "Aegis",
+    "default_popup": "popup/popup.html"
+  },
+  "options_page": "settings/settings.html",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting",
+    "tabs",
+    "tts"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background/background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "content/content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "commands": {
+    "toggle_aegis": {
+      "suggested_key": {
+        "default": "Alt+Shift+0"
+      },
+      "description": "Toggle Aegis on or off"
+    },
+    "toggle_reading_mode": {
+      "suggested_key": {
+        "default": "Alt+Shift+1"
+      },
+      "description": "Toggle Reading Mode"
+    },
+    "toggle_focus_mode": {
+      "suggested_key": {
+        "default": "Alt+Shift+2"
+      },
+      "description": "Toggle Focus Mode"
+    },
+    "toggle_tts": {
+      "suggested_key": {
+        "default": "Alt+Shift+3"
+      },
+      "description": "Toggle Text-to-Speech (Read Aloud)"
+    },
+    "cycle_color_blind_mode": {
+      "description": "Cycle Color Blind Mode (Configurable in chrome://extensions/shortcuts)"
+    },
+    "toggle_reading_ruler": {
+      "description": "Toggle Reading Guide / Ruler (Configurable in chrome://extensions/shortcuts)"
+    }
+  }
+}

@@ -1,0 +1,444 @@
+/* ==========================================================
+   AEGIS SETTINGS STYLES (Manifest V3)
+========================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+body {
+    background: #12110F;
+    color: #F4F1EA;
+    line-height: 1.6;
+    font-size: 14px;
+}
+
+.container {
+    width: 100%;
+    max-width: 860px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* ==========================================================
+   HEADER
+========================================================== */
+.header {
+    background: #1B1916;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 24px 28px;
+    margin-bottom: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.shield {
+    width: 60px;
+    height: 60px;
+    border-radius: 16px;
+    background: #221F1A;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(198, 132, 44, 0.3);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.shield img {
+    width: 36px;
+    height: 36px;
+}
+
+.logo h1 {
+    font-size: 26px;
+    font-weight: 700;
+    color: #FFFFFF;
+    letter-spacing: -0.02em;
+}
+
+.logo p {
+    font-size: 13px;
+    color: #A79C8C;
+    margin-top: 3px;
+}
+
+.version-badge {
+    padding: 6px 14px;
+    border-radius: 20px;
+    background: #2B2722;
+    color: #C6842C;
+    font-size: 12px;
+    font-weight: 700;
+    border: 1px solid rgba(198, 132, 44, 0.3);
+}
+
+/* ==========================================================
+   CARDS
+========================================================== */
+.card {
+    background: #1B1916;
+    border-radius: 18px;
+    padding: 24px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+.card h2 {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: #C6842C;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+
+.section-desc {
+    font-size: 13px;
+    color: #8F877A;
+    margin-bottom: 18px;
+}
+
+.card-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 14px;
+}
+
+/* ==========================================================
+   SETTINGS & SWITCHES
+========================================================== */
+.setting {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.setting:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.setting-title {
+    font-weight: 600;
+    font-size: 14px;
+    color: #FFFFFF;
+}
+
+.setting-description {
+    font-size: 12px;
+    color: #A79C8C;
+    margin-top: 3px;
+}
+
+.custom-select {
+    background: #27231E;
+    color: #F4F1EA;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 10px;
+    padding: 8px 14px;
+    font-size: 13px;
+    font-weight: 500;
+    outline: none;
+    cursor: pointer;
+}
+
+.custom-select:focus {
+    border-color: #C6842C;
+}
+
+/* Switch */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 48px;
+    height: 28px;
+    flex-shrink: 0;
+}
+
+.switch input {
+    display: none;
+}
+
+.slider {
+    position: absolute;
+    inset: 0;
+    background: #36322B;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.22s ease;
+}
+
+.slider::before {
+    content: "";
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    left: 3px;
+    top: 3px;
+    background: #FFFFFF;
+    border-radius: 50%;
+    transition: 0.22s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.switch input:checked + .slider {
+    background: #C6842C;
+}
+
+.switch input:checked + .slider::before {
+    transform: translateX(20px);
+}
+
+/* ==========================================================
+   SITE PROFILES MANAGER
+========================================================== */
+.site-search-wrap {
+    margin-bottom: 14px;
+}
+
+.text-input {
+    width: 100%;
+    background: #141210;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 10px 14px;
+    color: #F4F1EA;
+    font-size: 13px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.text-input:focus {
+    border-color: #C6842C;
+}
+
+.site-list {
+    max-height: 280px;
+    overflow-y: auto;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    background: #141210;
+}
+
+.site-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.site-item:last-child {
+    border-bottom: none;
+}
+
+.site-domain {
+    font-size: 13px;
+    font-weight: 600;
+    color: #FFFFFF;
+}
+
+.site-meta {
+    font-size: 11px;
+    color: #8F877A;
+    margin-top: 2px;
+}
+
+.empty-state {
+    padding: 30px;
+    text-align: center;
+    color: #8F877A;
+    font-size: 13px;
+}
+
+/* ==========================================================
+   BUTTONS
+========================================================== */
+.buttons {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+button {
+    border: none;
+    border-radius: 12px;
+    padding: 11px 20px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s ease;
+}
+
+.primary-btn {
+    background: linear-gradient(135deg, #C6842C, #A76918);
+    color: #FFFFFF;
+}
+
+.primary-btn:hover {
+    box-shadow: 0 6px 20px rgba(198, 132, 44, 0.35);
+    transform: translateY(-1px);
+}
+
+.secondary-btn {
+    background: #27231E;
+    color: #F4F1EA;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.secondary-btn:hover {
+    background: #332E27;
+    border-color: rgba(198, 132, 44, 0.3);
+}
+
+.danger-btn-sm {
+    background: #3F1D1D;
+    color: #FCA5A5;
+    padding: 6px 12px;
+    font-size: 11px;
+    border: 1px solid rgba(239, 68, 68, 0.2);
+    border-radius: 8px;
+}
+
+.danger-btn-sm:hover {
+    background: #522424;
+    border-color: #EF4444;
+}
+
+.btn-icon {
+    width: 16px;
+    height: 16px;
+}
+
+/* ==========================================================
+   KEYBOARD SHORTCUTS
+========================================================== */
+.shortcuts-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 14px;
+}
+
+.shortcut-box {
+    background: #141210;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 12px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.shortcut-box kbd {
+    font-family: monospace;
+    font-size: 12px;
+    color: #C6842C;
+    font-weight: 700;
+}
+
+.shortcut-box span {
+    font-size: 12px;
+    color: #A79C8C;
+}
+
+.shortcuts-footer {
+    font-size: 12px;
+    color: #726A5E;
+}
+
+.shortcuts-footer code {
+    background: #141210;
+    padding: 2px 6px;
+    border-radius: 6px;
+    color: #C6842C;
+}
+
+/* ==========================================================
+   ABOUT CARD
+========================================================== */
+.about-card p {
+    color: #A79C8C;
+    font-size: 13px;
+    margin-bottom: 8px;
+}
+
+.about-card p:last-child {
+    margin-bottom: 0;
+}
+
+/* ==========================================================
+   TOAST
+========================================================== */
+.toast {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    background: #25211B;
+    border: 1px solid rgba(198, 132, 44, 0.35);
+    color: #FFFFFF;
+    padding: 12px 20px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(20px);
+    transition: all 0.28s ease;
+    z-index: 99999;
+}
+
+.toast.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.toast-icon {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #C6842C;
+    color: #111;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 12px;
+}
+
+.toast-message {
+    font-size: 13px;
+    font-weight: 600;
+}
+
+@media (max-width: 680px) {
+    .shortcuts-grid {
+        grid-template-columns: 1fr;
+    }
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
+    }
+}
