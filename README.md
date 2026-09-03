@@ -76,8 +76,12 @@ The modern web is often cluttered with sensory overload: aggressive autoplay med
 *Dedicated options dashboard for setting global readability presets, managing site-by-site overrides, and importing/exporting backups.*
 
 <p align="center">
-  <img src="screenshots/analysis.pngpng" src="screenshots/analysis2.png" alt="Aegis Settings Page" width="820" style="border-radius: 12px; box-shadow: 0 8px 30px rgba(0,0,0,0.5);">
+  <img src="screenshots/analysis.png" alt="Aegis Settings Page" width="820" style="border-radius: 12px; box-shadow: 0 8px 30px rgba(0,0,0,0.5);">
 </p>
+<!--<p align="center">
+  <img src="screenshots/analysis2.png" alt="Aegis Settings Page" width="820" style="border-radius: 12px; box-shadow: 0 8px 30px rgba(0,0,0,0.5);">
+</p>-->
+
 
 ---
 
