@@ -1,5 +1,5 @@
 # Aegis 🛡️
-### *Universal Accessibility, Visual Comfort & Readability Toolkit for Google Chrome*
+### *Universal Accessibility, Visual Comfort & Readability Toolkit*
 
 <p align="center">
   <img src="assets/icons/shield.svg" alt="Aegis Logo" width="90" height="90">
