@@ -40,9 +40,12 @@ The modern web is often cluttered with sensory overload: aggressive autoplay med
 *Reading aloud YouTube page content with active tab status, health score, and on-page floating speech controller.*
 
 <p align="center">
-  <img src="screenshots/popup.png.png" alt="Aegis Live on Webpage with Floating Audio Bar" width="820" style="border-radius: 12px; box-shadow: 0 8px 30px rgba(0,0,0,0.5);">
+  <img src="screenshots/webpage.png" alt="Aegis Live on Webpage with Floating Audio Bar" width="820" style="border-radius: 12px; box-shadow: 0 8px 30px rgba(0,0,0,0.5);">
 </p>
 
+<p align="center">
+  <img src="screenshots/popup.png.png" alt="Aegis Live on Webpage with Floating Audio Bar" width="820" style="border-radius: 12px; box-shadow: 0 8px 30px rgba(0,0,0,0.5);">
+</p>
 ---
 
 ### 2. Dashboard, Typography & Audio Assistance
@@ -51,6 +54,7 @@ The modern web is often cluttered with sensory overload: aggressive autoplay med
 <p align="center">
   <img src="screenshots/pupup2.png" alt="Aegis Popup Overview" width="380" style="border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.4);">
 </p>
+
 
 ---
 
