@@ -259,9 +259,6 @@ Contributions are welcome! If you have suggestions for new accessibility feature
 
 ---
 
-## 📄 License
-
-Distributed under the **MIT License**. See `LICENSE` for more information.
 
 <p align="center">
   Built with ❤️ for a more accessible, inclusive, and readable web.
