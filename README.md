@@ -9,14 +9,7 @@
   <strong>Transform any website into an accessible, readable, and distraction-free sanctuary.</strong>
 </p>
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Manifest-V3-orange?style=flat-square" alt="Manifest V3">
-  <img src="https://img.shields.io/badge/Version-1.2.2-amber?style=flat-square" alt="Version 1.2.2">
-  <img src="https://img.shields.io/badge/WCAG-2.1%20Compliant-brightgreen?style=flat-square" alt="WCAG 2.1 Compliant">
-  <img src="https://img.shields.io/badge/Platform-Google%20Chrome-blue?style=flat-square" alt="Google Chrome">
-  <img src="https://img.shields.io/badge/Telemetry-Zero%20(100%25%20Offline)-success?style=flat-square" alt="Privacy First">
-  <img src="https://img.shields.io/badge/License-MIT-lightgrey?style=flat-square" alt="License MIT">
-</p>
+
 
 ---
 
