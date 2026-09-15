@@ -87,7 +87,7 @@ The modern web is often cluttered with sensory overload: aggressive autoplay med
 
 ### 🔊 1. Native Audio Assistance (Text-to-Speech)
 Aegis features a rock-solid, background-driven speech synthesis engine powered by Chrome's native `chrome.tts` API:
-- **Zero Autoplay Restrictions**: Unlike standard in-page Web Speech APIs that fail due to browser autoplay policies, Aegis speaks cleanly across any web page.
+- **Zero Autoplay Restriction**: Unlike standard in-page Web Speech APIs that fail due to browser autoplay policies, Aegis speaks cleanly across any web page.
 - **Continuous Background Playback**: Speech continues playing smoothly even after you close the extension popup.
 - **Smart Text Extraction**:
   - Highlights a specific paragraph? Aegis reads **only your selection**.
